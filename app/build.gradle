@@ -1,13 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
 }
 
 android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.example.androiddevchallenge"
+        applicationId "com.gabpa3.puppyadoption"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
@@ -34,6 +35,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
@@ -73,6 +79,8 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     implementation "androidx.compose.ui:ui-tooling:$compose_version"
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+
+    implementation "dev.chrisbanes.accompanist:accompanist-glide:0.6.1"
 
     testImplementation 'junit:junit:4.13.2'
 

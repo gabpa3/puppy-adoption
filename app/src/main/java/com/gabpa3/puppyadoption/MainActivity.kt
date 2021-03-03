@@ -13,34 +13,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge
+package com.gabpa3.puppyadoption
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import androidx.compose.ui.unit.dp
+import com.gabpa3.puppyadoption.data.PuppyData
+import com.gabpa3.puppyadoption.ui.screen.PuppyDetailScreen
+import com.gabpa3.puppyadoption.ui.screen.PuppyList
+import com.gabpa3.puppyadoption.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                GoHome()
+//                GoDetail()
             }
         }
     }
 }
 
+@Composable
+fun GoDetail() {
+    val puppy = PuppyData.findById(8)
+    puppy.description = stringResource(R.string.text_doggo_ipsum)
+    PuppyDetailScreen(puppy = puppy)
+}
+
 // Start building your app here!
 @Composable
-fun MyApp() {
+fun GoHome() {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        PuppyList(
+            puppies = PuppyData.puppyList,
+            modifier = Modifier.padding(horizontal = 16.dp)
+        )
     }
 }
 
@@ -48,7 +65,7 @@ fun MyApp() {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp()
+        GoHome()
     }
 }
 
@@ -56,6 +73,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp()
+        GoHome()
     }
 }
