@@ -1,10 +1,12 @@
-# Template repository
+# Puppy Adoption App Challenge
 
 Template repository for the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
 
-## Getting started
-Copy this repository by pressing the "Use this template" button in Github.
-Clone your repository and open it in the latest [Android Studio (Canary build)](https://developer.android.com/studio/preview).
+## Description
+App in Android for discovering a new world in developing declarative UI with Compose
+
+## Screenshots
+<img src="/results/screenshot_1.png" width="250">&emsp;<img src="/results/screenshot_2.png" width="250">
 
 ## Submission requirements
 - Follow the challenge description on the project website: [developer.android.com/dev-challenge](https://developer.android.com/dev-challenge)
