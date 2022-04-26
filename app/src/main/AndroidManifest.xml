@@ -23,8 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDevChallenge">
         <activity
+            android:exported="true"
             android:name="com.gabpa3.puppyadoption.MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/Theme.AndroidDevChallenge.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
