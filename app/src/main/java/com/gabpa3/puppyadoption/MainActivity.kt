@@ -18,17 +18,15 @@ package com.gabpa3.puppyadoption
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.gabpa3.puppyadoption.data.PuppyData
-import com.gabpa3.puppyadoption.ui.screen.PuppyDetailScreen
-import com.gabpa3.puppyadoption.ui.screen.PuppyList
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.gabpa3.puppyadoption.ui.navigation.NavRoute
+import com.gabpa3.puppyadoption.ui.screen.DetailScreen
+import com.gabpa3.puppyadoption.ui.screen.HomeScreen
 import com.gabpa3.puppyadoption.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -36,43 +34,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                GoHome()
-//                GoDetail()
+               Navigation()
             }
         }
     }
 }
 
 @Composable
-fun GoDetail() {
-    val puppy = PuppyData.findById(8)
-    puppy.description = stringResource(R.string.text_doggo_ipsum)
-    PuppyDetailScreen(puppy = puppy)
-}
-
-// Start building your app here!
-@Composable
-fun GoHome() {
-    Surface(color = MaterialTheme.colors.background) {
-        PuppyList(
-            puppies = PuppyData.puppyList,
-            modifier = Modifier.padding(horizontal = 16.dp)
-        )
-    }
-}
-
-@Preview("Light Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun LightPreview() {
-    MyTheme {
-        GoHome()
-    }
-}
-
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun DarkPreview() {
-    MyTheme(darkTheme = true) {
-        GoHome()
+fun Navigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "home") {
+        composable(NavRoute.HomeRoute.route) {
+            HomeScreen(onDetail = {
+                navController.navigate("detail/$it")
+            })
+        }
+        composable(
+            NavRoute.DetailRoute.route,
+            arguments = listOf(navArgument("puppyId") { type = NavType.IntType })
+        ) { entry ->
+            val id = entry.arguments?.getInt("puppyId")
+            requireNotNull(id)
+            DetailScreen(id, onUpClick = { navController.popBackStack() })
+        }
     }
 }
