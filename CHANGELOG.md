@@ -4,3 +4,4 @@
 - Added master/detail screens
 - Added captures
 - Updated libs and added changelog
+- Added navigation
