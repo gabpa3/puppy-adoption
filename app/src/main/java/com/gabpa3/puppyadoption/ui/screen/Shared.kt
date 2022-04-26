@@ -15,7 +15,7 @@ import com.gabpa3.puppyadoption.R
 import com.gabpa3.puppyadoption.data.Puppy
 
 @Composable
-fun PuppyImage(puppy: Puppy, modifier: Modifier = Modifier) {
+fun PuppyImage(puppy: Puppy, modifier: Modifier = Modifier.fillMaxSize()) {
     SubcomposeAsyncImage(
         model = puppy.photoUrl,
         contentDescription = stringResource(R.string.image_puppy_description),
