@@ -26,14 +26,14 @@ object PuppyData {
             breed = PuppyBreed.BORDER_COLLIE,
             personality = "",
             genre = PuppyGenre.MALE,
-            photoUrl = "https://placedog.net/200?id=37"
+            photoUrl = "https://placedog.net/200?id=38"
         ),
         Puppy(
             id = 2,
             name = "Ghost",
-            age = 1.5,
+            age = 12.0,
             size = PuppySize.LARGE,
-            breed = PuppyBreed.SIBERIAN_WOLF,
+            breed = PuppyBreed.LABRADOR_RETRIEVER,
             personality = "",
             genre = PuppyGenre.MALE,
             photoUrl = "https://placedog.net/200?id=96"
@@ -41,27 +41,27 @@ object PuppyData {
         Puppy(
             id = 3,
             name = "Shaggy",
-            age = 0.5,
-            size = PuppySize.LARGE,
-            breed = PuppyBreed.BOXER,
+            age = 5.0,
+            size = PuppySize.SMALL,
+            breed = PuppyBreed.UNDEFINE,
             personality = "",
             genre = PuppyGenre.MALE,
             photoUrl = "https://placedog.net/200?id=90"
         ),
         Puppy(
             id = 4,
-            name = "Sun",
-            age = 1.5,
-            size = PuppySize.SMALL,
-            breed = PuppyBreed.CORGI,
+            name = "NALA",
+            age = 2.5,
+            size = PuppySize.MEDIUM,
+            breed = PuppyBreed.UNDEFINE,
             personality = "",
             genre = PuppyGenre.FEMALE,
-            photoUrl = "https://placedog.net/200?id=75"
+            photoUrl = "https://placedog.net/200?id=227"
         ),
         Puppy(
             id = 6,
             name = "Lupin",
-            age = .8,
+            age = 8.0,
             size = PuppySize.MEDIUM,
             breed = PuppyBreed.UNDEFINE,
             personality = "",
@@ -71,19 +71,19 @@ object PuppyData {
         Puppy(
             id = 7,
             name = "Perdy",
-            age = 1.0,
+            age = 3.0,
             size = PuppySize.LARGE,
             breed = PuppyBreed.DALMATIAN,
             personality = "",
             genre = PuppyGenre.FEMALE,
-            photoUrl = "https://placedog.net/200?id=92"
+            photoUrl = "https://placedog.net/200?id=137"
         ),
         Puppy(
             id = 8,
             name = "Lady",
-            age = 3.0,
+            age = 4.0,
             size = PuppySize.SMALL,
-            breed = PuppyBreed.COCKER_SPANIEL,
+            breed = PuppyBreed.SCHNAUZER,
             personality = "",
             genre = PuppyGenre.FEMALE,
             photoUrl = "https://placedog.net/200?id=93"
@@ -101,19 +101,19 @@ object PuppyData {
         Puppy(
             id = 10,
             name = "Spoty",
-            age = .2,
-            size = PuppySize.MEDIUM,
-            breed = PuppyBreed.BORDER_COLLIE,
+            age = .4,
+            size = PuppySize.LARGE,
+            breed = PuppyBreed.DALMATIAN,
             personality = "",
             genre = PuppyGenre.FEMALE,
-            photoUrl = "https://placedog.net/200?id=135"
+            photoUrl = "https://placedog.net/200?id=123"
         ),
         Puppy(
             id = 11,
             name = "Muck",
             age = 1.0,
-            size = PuppySize.SMALL,
-            breed = PuppyBreed.CORGI,
+            size = PuppySize.LARGE,
+            breed = PuppyBreed.SIBERIAN_WOLF,
             personality = "",
             genre = PuppyGenre.MALE,
             photoUrl = "https://placedog.net/200?id=139"
@@ -121,9 +121,9 @@ object PuppyData {
         Puppy(
             id = 12,
             name = "Simba",
-            age = 2.0,
-            size = PuppySize.SMALL,
-            breed = PuppyBreed.UNDEFINE,
+            age = 1.0,
+            size = PuppySize.LARGE,
+            breed = PuppyBreed.GOLDEN_RETRIEVER,
             personality = "",
             genre = PuppyGenre.MALE,
             photoUrl = "https://placedog.net/200?id=9"
@@ -131,12 +131,12 @@ object PuppyData {
         Puppy(
             id = 13,
             name = "Night",
-            age = .3,
-            size = PuppySize.LARGE,
-            breed = PuppyBreed.SIBERIAN_WOLF,
+            age = 2.0,
+            size = PuppySize.SMALL,
+            breed = PuppyBreed.COCKER_SPANIEL,
             personality = "",
-            genre = PuppyGenre.FEMALE,
-            photoUrl = "https://placedog.net/200?id=160"
+            genre = PuppyGenre.MALE,
+            photoUrl = "https://placedog.net/200?id=89"
         )
     )
 
