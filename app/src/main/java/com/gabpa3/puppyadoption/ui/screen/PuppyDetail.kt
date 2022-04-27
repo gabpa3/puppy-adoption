@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,6 +30,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
@@ -39,10 +41,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.gabpa3.puppyadoption.R
 import com.gabpa3.puppyadoption.data.Puppy
@@ -110,9 +114,8 @@ private fun ContentDetail(puppy: Puppy) {
         modifier = Modifier.padding(start = 16.dp, end = 16.dp),
         textStyleForName = MaterialTheme.typography.h5
     )
-    Spacer(Modifier.size(8.dp))
+    Spacer(modifier = Modifier.size(16.dp))
     ContentDescription(value = puppy.description)
-    Spacer(Modifier.size(16.dp))
     ButtonAdopt()
 }
 
@@ -121,14 +124,23 @@ fun ContentDescription(value: String) {
     Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp)) {
         Text(text = stringResource(id = R.string.label_description), style = MaterialTheme.typography.h6)
         Spacer(Modifier.size(4.dp))
-        Text(text = value, style = MaterialTheme.typography.body1, maxLines = 6)
+        Text(
+            text = value,
+            style = MaterialTheme.typography.body1,
+            maxLines = 8,
+            overflow = TextOverflow.Ellipsis
+        )
     }
 }
 
 @Composable
 fun ButtonAdopt() {
     val context = LocalContext.current
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+    Row(
+        Modifier.fillMaxWidth().fillMaxHeight(),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.Bottom
+    ) {
         Button(
             onClick = {
                 Toast.makeText(
@@ -141,6 +153,10 @@ fun ButtonAdopt() {
                 .width(250.dp)
                 .height(50.dp),
             shape = RoundedCornerShape(24.dp),
+            elevation = ButtonDefaults.elevation(
+                defaultElevation = 6.dp,
+                pressedElevation = 8.dp,
+                disabledElevation = 0.dp)
         ) {
             Text(text = stringResource(id = R.string.detail_button_adopt).uppercase())
         }
