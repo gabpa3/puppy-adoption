@@ -6,3 +6,4 @@
 - Updated libs and added changelog
 - Added navigation
 - Adapted new data values
+- Improved detail and home screens

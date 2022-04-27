@@ -57,7 +57,7 @@ fun HomeScreen(onDetail: (Int) -> Unit) {
     Surface(color = MaterialTheme.colors.background) {
         PuppyList(
             puppies = PuppyData.puppyList,
-            modifier = Modifier.padding(horizontal = 16.dp),
+            modifier = Modifier.padding(16.dp),
             onDetail = onDetail
         )
     }
