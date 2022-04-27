@@ -1,12 +1,12 @@
 # Puppy Adoption App Challenge
 
-Template repository for the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
+For the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
 
 ## Description
 App in Android for discovering a new world in developing declarative UI with Compose
 
 ## Screenshots
-<img src="/results/screenshot_1.png" width="250">&emsp;<img src="/results/screenshot_2.png" width="250">
+<img src="https://user-images.githubusercontent.com/16760596/165432976-4fb916bf-ed26-434b-b632-db85b12972c1.png" width="300">&emsp;<img src="https://user-images.githubusercontent.com/16760596/165433139-b9812d26-9b9a-4824-bbca-c66aa03564ad.png" width="300">
 
 ## Submission requirements
 - Follow the challenge description on the project website: [developer.android.com/dev-challenge](https://developer.android.com/dev-challenge)
