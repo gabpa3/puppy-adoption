@@ -5,3 +5,4 @@
 - Added captures
 - Updated libs and added changelog
 - Added navigation
+- Adapted new data values
